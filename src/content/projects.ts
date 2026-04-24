@@ -17,7 +17,7 @@ function img(path: string) {
   return `${normalizedBase}${normalizedPath}`
 }
 
-export const projects: Project[] = [
+const curatedProjects: Project[] = [
   {
     slug: 'img-1',
     title: '鐵閘／門口工程',
@@ -99,6 +99,39 @@ export const projects: Project[] = [
     tags: ['維修', '保養'],
   },
 ]
+
+function padImageNumber(n: number) {
+  return String(n)
+}
+
+function makeAutoProject(n: number): Project {
+  const file = `/images/IMG_${padImageNumber(n)}.jpg`
+  return {
+    slug: `img-${n}`,
+    title: `工程相片 ${n}`,
+    summary: '點擊查看詳情。',
+    description: '工程相片展示（可按需要後續補充工程描述、分類及更多相片）。',
+    coverImage: img(file),
+    images: [img(file)],
+  }
+}
+
+// We currently have IMG_1.jpg ... IMG_23.jpg in public/images.
+const autoProjects: Project[] = Array.from({ length: 23 }, (_, i) => makeAutoProject(i + 1))
+
+// Merge: curated items override auto-generated ones.
+const bySlug = new Map<string, Project>()
+for (const p of autoProjects) bySlug.set(p.slug, p)
+for (const p of curatedProjects) bySlug.set(p.slug, p)
+
+export const projects: Project[] = Array.from(bySlug.values()).sort((a, b) => {
+  const na = Number(a.slug.replace('img-', ''))
+  const nb = Number(b.slug.replace('img-', ''))
+  return na - nb
+})
+
+// Keep homepage carousel focused.
+export const featuredProjects: Project[] = curatedProjects
 
 export function getProjectBySlug(slug: string) {
   return projects.find((p) => p.slug === slug)

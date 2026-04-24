@@ -2,7 +2,7 @@ import { ContactCards } from '../components/ContactCards'
 import { MapEmbed } from '../components/MapEmbed'
 import { ProjectCarousel } from '../components/ProjectCarousel'
 import { company } from '../content/company'
-import { projects } from '../content/projects'
+import { featuredProjects } from '../content/projects'
 
 export function Home() {
   return (
@@ -46,7 +46,7 @@ export function Home() {
           </a>
         </div>
         <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-4 shadow-sm shadow-black/5">
-          <ProjectCarousel projects={projects} />
+          <ProjectCarousel projects={featuredProjects} />
         </div>
       </section>
 

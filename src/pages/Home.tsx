@@ -56,16 +56,58 @@ export function Home() {
 
       <section className="grid gap-4 md:grid-cols-3">
         {[
-          { title: '服務範圍', desc: '鐵器裝修、焊接工程、欄河、閘門、不鏽鋼工程、維修保養。' },
-          { title: '工程流程', desc: '上門度尺 → 報價 → 設計/確認 → 製作 → 安裝 → 跟進保養。' },
-          { title: '我們的優勢', desc: '多年經驗、準時交付、安全施工、可提供現場評估、售後跟進。' },
+          {
+            title: '服務範圍',
+            desc: '由小修補到成套鐵器／不鏽鋼工程，一次過幫你搞掂，收口要靚、用得要安心。',
+            points: ['鐵閘／欄河', '焊接修補', '不鏽鋼工程', '維修保養'],
+            icon: (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true" fill="currentColor">
+                <path d="M3 7h18v2H3V7Zm0 4h18v2H3v-2Zm0 4h12v2H3v-2Z" />
+              </svg>
+            ),
+          },
+          {
+            title: '工程流程',
+            desc: '唔玩估估下：先度尺、再報價、確認做法，跟住製作同安裝，最後再幫你check埋。',
+            points: ['上門度尺', '清楚報價', '製作安裝', '驗收交收'],
+            icon: (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true" fill="currentColor">
+                <path d="M9 5h6v2H9V5Zm-4 4h14v2H5V9Zm0 4h10v2H5v-2Zm0 4h14v2H5v-2Z" />
+              </svg>
+            ),
+          },
+          {
+            title: '我們的優勢',
+            desc: '地盤味係講嘢啫，做嘢就係穩陣：準時、重安全、唔偷雞，交到貨先算。',
+            points: ['經驗穩陣', '安全施工', '準時交付', '跟進保養'],
+            icon: (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true" fill="currentColor">
+                <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1 14-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6Z" />
+              </svg>
+            ),
+          },
         ].map((card) => (
           <div
             key={card.title}
             className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5"
           >
-            <div className="text-sm font-semibold">{card.title}</div>
-            <div className="mt-2 text-sm text-zinc-700">{card.desc}</div>
+            <div className="flex items-center gap-2">
+              <div className="grid h-9 w-9 place-items-center rounded-xl bg-zinc-950/5 text-zinc-900">
+                {card.icon}
+              </div>
+              <div className="text-sm font-semibold">{card.title}</div>
+            </div>
+            <div className="mt-3 text-sm leading-relaxed text-zinc-700">{card.desc}</div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {card.points.map((p) => (
+                <span
+                  key={p}
+                  className="rounded-full border border-zinc-950/10 bg-white/60 px-3 py-1 text-xs font-semibold text-zinc-700"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </section>
@@ -73,9 +115,6 @@ export function Home() {
       <section className="space-y-4">
         <div>
           <div className="text-sm font-semibold">聯絡與地址</div>
-          <div className="mt-1 text-sm text-zinc-700">
-            一鍵複製聯絡資料，亦可查看地圖位置。
-          </div>
         </div>
 
         <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-4 shadow-sm shadow-black/5">
@@ -136,7 +175,6 @@ export function Home() {
               三位代表人物：一個講效率、一個睇位準、一個守安全。講嘢有啲地盤味，但做嘢係穩陣派。
             </div>
           </div>
-          <div className="text-xs text-zinc-500">（手機直排／電腦三欄）</div>
         </div>
 
         <div className="mt-5 grid gap-4 lg:grid-cols-3">

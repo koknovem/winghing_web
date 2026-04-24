@@ -182,7 +182,7 @@ export function Layout() {
       </footer>
 
       <a
-        className="fixed bottom-5 right-5 rounded-full bg-green-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/10 hover:bg-green-700"
+        className="fixed bottom-5 right-5 z-[9999] rounded-full bg-green-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 hover:bg-green-700"
         href={company.whatsapp.waMeLink}
         target="_blank"
         rel="noreferrer"

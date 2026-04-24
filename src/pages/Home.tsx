@@ -12,8 +12,12 @@ export function Home() {
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
             永興鐵器裝修工程
           </h1>
-          <p className="mt-3 text-base leading-relaxed text-zinc-700">
-            鐵器裝修、製作及安裝。可安排上門度尺及報價。
+          <p className="mt-3 text-base leading-relaxed text-zinc-700 md:text-lg">
+            香港地要<strong className="text-zinc-950">穩陣</strong>，就交俾我哋。
+            <span className="text-zinc-800">鐵閘、欄河、焊接、</span>
+            <span className="text-zinc-800">不鏽鋼工程同維修</span>一take過搞掂。
+            <span className="text-zinc-800">想快啲有個準？</span>
+            WhatsApp 我哋，安排上門度尺報價。
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

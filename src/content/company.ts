@@ -2,7 +2,7 @@ export const company = {
   chineseName: '永興鐵器裝修工程',
   englishName: 'Wing Hing Iron Ware Decoration ENG.',
   tel: '2698 3761',
-  fax: '26959760',
+  fax: '2695 9760',
   whatsapp: {
     label: '李生',
     number: '61083548',

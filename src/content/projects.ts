@@ -8,6 +8,11 @@ export type Project = {
   tags?: string[]
 }
 
+function img(path: string) {
+  // Ensures images work on GitHub Pages sub-paths (BASE_URL includes repo name).
+  return new URL(path.replace(/^\//, ''), import.meta.env.BASE_URL).toString()
+}
+
 export const projects: Project[] = [
   {
     slug: 'img-1',
@@ -15,8 +20,8 @@ export const projects: Project[] = [
     summary: '牢固耐用，兼顧美觀與實用。',
     description:
       '可按現場尺寸度身訂造，材料與款式可配合需要。適合住宅或商舖出入口使用。',
-    coverImage: '/images/IMG_1.jpg',
-    images: ['/images/IMG_1.jpg', '/images/IMG_2.jpg', '/images/IMG_3.jpg'],
+    coverImage: img('/images/IMG_1.jpg'),
+    images: [img('/images/IMG_1.jpg'), img('/images/IMG_2.jpg'), img('/images/IMG_3.jpg')],
     tags: ['閘門', '出入口'],
   },
   {
@@ -25,8 +30,8 @@ export const projects: Project[] = [
     summary: '安全防護與線條感兼備。',
     description:
       '可配合現場環境設計欄河高度與間距，確保安全之餘，亦保持整體一致性。',
-    coverImage: '/images/IMG_4.jpg',
-    images: ['/images/IMG_4.jpg', '/images/IMG_5.jpg'],
+    coverImage: img('/images/IMG_4.jpg'),
+    images: [img('/images/IMG_4.jpg'), img('/images/IMG_5.jpg')],
     tags: ['欄河', '扶手'],
   },
   {
@@ -35,8 +40,8 @@ export const projects: Project[] = [
     summary: '針對鬆脫、破損位置作加固處理。',
     description:
       '針對結構鬆脫或破損位置作焊接修補及加固，提升耐用度與安全性。',
-    coverImage: '/images/IMG_6.jpg',
-    images: ['/images/IMG_6.jpg', '/images/IMG_7.jpg'],
+    coverImage: img('/images/IMG_6.jpg'),
+    images: [img('/images/IMG_6.jpg'), img('/images/IMG_7.jpg')],
     tags: ['焊接', '維修'],
   },
   {
@@ -45,8 +50,8 @@ export const projects: Project[] = [
     summary: '耐用易打理，適合室內外。',
     description:
       '不鏽鋼物料耐用及易於清潔，常用於扶手、圍欄及各類配件，適合多種環境。',
-    coverImage: '/images/IMG_8.jpg',
-    images: ['/images/IMG_8.jpg', '/images/IMG_9.jpg', '/images/IMG_10.jpg'],
+    coverImage: img('/images/IMG_8.jpg'),
+    images: [img('/images/IMG_8.jpg'), img('/images/IMG_9.jpg'), img('/images/IMG_10.jpg')],
     tags: ['不鏽鋼'],
   },
   {
@@ -55,8 +60,8 @@ export const projects: Project[] = [
     summary: '由現場評估到安裝，一站式處理。',
     description:
       '可先安排現場評估及提供建議，再按需要製作及安排安裝，交付前會檢查穩固度。',
-    coverImage: '/images/IMG_11.jpg',
-    images: ['/images/IMG_11.jpg', '/images/IMG_12.jpg', '/images/IMG_13.jpg'],
+    coverImage: img('/images/IMG_11.jpg'),
+    images: [img('/images/IMG_11.jpg'), img('/images/IMG_12.jpg'), img('/images/IMG_13.jpg')],
     tags: ['裝修', '安裝'],
   },
   {
@@ -65,8 +70,8 @@ export const projects: Project[] = [
     summary: '配合營運需要，注重工期及安全。',
     description:
       '商舖工程著重工期與現場協調，可按營運時間安排施工，減少對生意影響。',
-    coverImage: '/images/IMG_14.jpg',
-    images: ['/images/IMG_14.jpg', '/images/IMG_15.jpg'],
+    coverImage: img('/images/IMG_14.jpg'),
+    images: [img('/images/IMG_14.jpg'), img('/images/IMG_15.jpg')],
     tags: ['商舖'],
   },
   {
@@ -75,8 +80,8 @@ export const projects: Project[] = [
     summary: '結構穩固，按用途設計承重。',
     description:
       '按用途設計尺寸與承重，常用於支撐、固定或放置物件，並兼顧安全與耐用。',
-    coverImage: '/images/IMG_16.jpg',
-    images: ['/images/IMG_16.jpg', '/images/IMG_17.jpg'],
+    coverImage: img('/images/IMG_16.jpg'),
+    images: [img('/images/IMG_16.jpg'), img('/images/IMG_17.jpg')],
     tags: ['支架', '結構'],
   },
   {
@@ -85,8 +90,8 @@ export const projects: Project[] = [
     summary: '定期檢查及保養，延長使用年期。',
     description:
       '提供維修及保養建議，針對磨損、鬆脫、鏽蝕位置作處理，延長使用年期。',
-    coverImage: '/images/IMG_18.jpg',
-    images: ['/images/IMG_18.jpg', '/images/IMG_19.jpg', '/images/IMG_20.jpg'],
+    coverImage: img('/images/IMG_18.jpg'),
+    images: [img('/images/IMG_18.jpg'), img('/images/IMG_19.jpg'), img('/images/IMG_20.jpg')],
     tags: ['維修', '保養'],
   },
 ]

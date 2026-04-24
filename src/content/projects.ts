@@ -9,8 +9,12 @@ export type Project = {
 }
 
 function img(path: string) {
-  // Ensures images work on GitHub Pages sub-paths (BASE_URL includes repo name).
-  return new URL(path.replace(/^\//, ''), import.meta.env.BASE_URL).toString()
+  // `import.meta.env.BASE_URL` can be relative (e.g. `./` on GitHub Pages),
+  // which is not a valid base for `new URL(...)` in the browser.
+  const base = import.meta.env.BASE_URL || '/'
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`
+  const normalizedPath = path.startsWith('/') ? path.slice(1) : path
+  return `${normalizedBase}${normalizedPath}`
 }
 
 export const projects: Project[] = [

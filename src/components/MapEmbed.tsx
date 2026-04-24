@@ -8,9 +8,11 @@ function buildGoogleMapsEmbed(address: string) {
 export function MapEmbed({
   title,
   address,
+  embedUrl,
 }: {
   title: string
   address: string
+  embedUrl?: string
 }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
@@ -20,7 +22,7 @@ export function MapEmbed({
       </div>
       <iframe
         title={`${company.chineseName}-${title}`}
-        src={buildGoogleMapsEmbed(address)}
+        src={embedUrl ?? buildGoogleMapsEmbed(address)}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         className="h-[320px] w-full"

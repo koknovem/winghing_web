@@ -15,9 +15,24 @@ export function Contact() {
       <ContactCards />
 
       <section className="grid gap-4 md:grid-cols-2">
-        <MapEmbed title="公司地址" address={company.addresses.office} />
+        <MapEmbed
+          title="公司地址"
+          address={company.addresses.office}
+          embedUrl={company.maps.officeEmbedUrl}
+        />
         <MapEmbed title="貨倉地址" address={company.addresses.warehouse} />
       </section>
+
+      <div className="text-sm text-zinc-700">
+        <a
+          className="font-semibold underline"
+          href={company.maps.officePlaceUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          在 Google Maps 開啟公司位置
+        </a>
+      </div>
     </div>
   )
 }

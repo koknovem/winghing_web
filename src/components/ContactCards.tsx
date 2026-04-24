@@ -37,7 +37,7 @@ export function ContactCards() {
 
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      <div className="rounded-2xl border border-zinc-200 bg-white p-6">
+      <div className="rounded-2xl border border-zinc-950/10 bg-white/60 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <div className="text-sm font-semibold">聯絡資料</div>
@@ -93,7 +93,7 @@ export function ContactCards() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-zinc-200 bg-white p-6">
+      <div className="rounded-2xl border border-zinc-950/10 bg-white/60 p-6">
         <div className="text-sm font-semibold">地址</div>
         <div className="mt-4 space-y-4 text-sm text-zinc-700">
           <div className="flex items-start justify-between gap-3">

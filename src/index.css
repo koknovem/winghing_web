@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* App-level base tweaks (keep minimal; use utilities for most styling). */
+/* App-level base tweaks + theme (HK contractor). */
 html,
 body,
 #root {
@@ -9,4 +9,8 @@ body,
 
 body {
   margin: 0;
+  background:
+    radial-gradient(900px 600px at 18% -10%, rgba(24, 24, 27, 0.14), transparent 60%),
+    radial-gradient(700px 520px at 90% 10%, rgba(22, 163, 74, 0.10), transparent 55%),
+    linear-gradient(180deg, #f6f5f0 0%, #f3f4f6 42%, #f6f5f0 100%);
 }

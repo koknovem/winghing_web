@@ -16,8 +16,8 @@ function NavItem({ to, label }: { to: string; label: string }) {
         [
           'rounded-full px-3 py-2 text-sm font-medium transition',
           isActive
-            ? 'bg-zinc-900 text-white'
-            : 'text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900',
+            ? 'bg-zinc-950 text-white'
+            : 'text-zinc-700 hover:bg-white/60 hover:text-zinc-950',
         ].join(' ')
       }
       end={to === '/'}
@@ -28,13 +28,16 @@ function NavItem({ to, label }: { to: string; label: string }) {
 }
 
 export function Layout() {
+  const telHref = `tel:${company.tel.replace(/\s+/g, '')}`
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
-      <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur">
+    <div className="min-h-screen text-zinc-900">
+      <header className="sticky top-0 z-50 border-b border-zinc-950/10 bg-[#111827]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <div className="min-w-0">
-            <div className="truncate text-base font-semibold">{company.chineseName}</div>
-            <div className="truncate text-xs text-zinc-500">
+            <div className="truncate text-base font-semibold text-white">
+              {company.chineseName}
+            </div>
+            <div className="truncate text-xs text-white/70">
               {company.englishName}
             </div>
           </div>
@@ -46,14 +49,46 @@ export function Layout() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              className="rounded-full bg-green-600 px-3 py-2 text-sm font-semibold text-white hover:bg-green-700"
-              href={company.whatsapp.waMeLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp 查詢
-            </a>
+            {/* Desktop: compact info card on the right */}
+            <div className="hidden items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 text-xs text-white/85 md:flex">
+              <a
+                className="font-semibold text-white hover:underline"
+                href={company.whatsapp.waMeLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp（{company.whatsapp.label}）
+              </a>
+              <span className="text-white/30">|</span>
+              <a className="font-semibold text-white hover:underline" href={telHref}>
+                {company.tel}
+              </a>
+              <span className="text-white/30">|</span>
+              <a
+                className="font-semibold text-white hover:underline"
+                href={`mailto:${company.email}`}
+              >
+                {company.email}
+              </a>
+            </div>
+
+            {/* Mobile: keep it clean with 2 quick buttons */}
+            <div className="flex items-center gap-2 md:hidden">
+              <a
+                className="rounded-full bg-green-600 px-3 py-2 text-xs font-semibold text-white hover:bg-green-700"
+                href={company.whatsapp.waMeLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
+              <a
+                className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold text-white hover:bg-white/15"
+                href={telHref}
+              >
+                致電
+              </a>
+            </div>
           </div>
         </div>
 
@@ -70,7 +105,7 @@ export function Layout() {
         <Outlet />
       </main>
 
-      <footer className="border-t border-zinc-200/80 bg-zinc-50">
+      <footer className="border-t border-zinc-950/10 bg-white/60">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
           <div>
             <div className="text-sm font-semibold">{company.chineseName}</div>

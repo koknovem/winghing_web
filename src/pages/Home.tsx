@@ -7,7 +7,7 @@ import { projects } from '../content/projects'
 export function Home() {
   return (
     <div className="space-y-12">
-      <section className="rounded-3xl border border-zinc-200 bg-gradient-to-br from-zinc-50 to-white p-8">
+      <section className="rounded-3xl border border-zinc-950/10 bg-white/70 p-8 shadow-sm shadow-black/5">
         <div className="max-w-2xl">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
             永興鐵器裝修工程
@@ -18,13 +18,13 @@ export function Home() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-800"
+              className="rounded-full bg-zinc-950 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-900"
               href="tel:26983761"
             >
               致電 2698 3761
             </a>
             <a
-              className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-900 hover:bg-zinc-50"
+              className="rounded-full border border-zinc-950/15 bg-white/70 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-white"
               href="https://wa.me/85261083548"
               target="_blank"
               rel="noreferrer"
@@ -45,7 +45,7 @@ export function Home() {
             查看全部
           </a>
         </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-4 shadow-sm shadow-black/5">
           <ProjectCarousel projects={projects} />
         </div>
       </section>
@@ -58,7 +58,7 @@ export function Home() {
         ].map((card) => (
           <div
             key={card.title}
-            className="rounded-2xl border border-zinc-200 bg-white p-6"
+            className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5"
           >
             <div className="text-sm font-semibold">{card.title}</div>
             <div className="mt-2 text-sm text-zinc-700">{card.desc}</div>
@@ -74,7 +74,9 @@ export function Home() {
           </div>
         </div>
 
-        <ContactCards />
+        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-4 shadow-sm shadow-black/5">
+          <ContactCards />
+        </div>
 
         <div className="grid gap-4 md:grid-cols-2">
           <MapEmbed
@@ -86,7 +88,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-6">
+      <section className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
         <details className="group">
           <summary className="cursor-pointer list-none text-sm font-semibold">
             常見問題（點擊展開）
@@ -110,7 +112,10 @@ export function Home() {
                 a: '可 WhatsApp 傳相片/尺寸作初步評估，或致電安排上門度尺。',
               },
             ].map((item) => (
-              <div key={item.q} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+              <div
+                key={item.q}
+                className="rounded-2xl border border-zinc-950/10 bg-white/60 p-5"
+              >
                 <div className="text-sm font-semibold">{item.q}</div>
                 <div className="mt-2 text-sm leading-relaxed text-zinc-700">{item.a}</div>
               </div>

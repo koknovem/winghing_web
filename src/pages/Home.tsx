@@ -93,7 +93,7 @@ export function Home() {
       </section>
 
       <section className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
-        <details className="group">
+        <details className="group" open>
           <summary className="cursor-pointer list-none text-sm font-semibold">
             常見問題（點擊展開）
           </summary>
@@ -126,6 +126,62 @@ export function Home() {
             ))}
           </div>
         </details>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-2">
+        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
+          <div className="text-sm font-semibold">地盤吹水角（認真又唔認真）</div>
+          <div className="mt-2 text-sm leading-relaxed text-zinc-700">
+            呢張卡係用嚟輕鬆下，唔係真係鬧人。地盤味句式就係咁：前後加兩三個「X」，節奏一到就有 feel。
+          </div>
+          <div className="mt-4 rounded-2xl border border-zinc-950/10 bg-white/60 p-5">
+            <div className="text-sm font-semibold">今日口頭禪</div>
+            <div className="mt-2 text-sm leading-relaxed text-zinc-700">
+              「唔好阻 X 住呀，行開啲啦！快 X 啲啦！」<br />
+              「根本就行唔 X 通，痴 X 線！」<br />
+              「唔 X 係呀～～」
+            </div>
+            <div className="mt-3 text-xs text-zinc-500">
+              提示：呢度個「X」你自己心入面補字就得，網站唔會幫你打出嚟。
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
+          <div className="text-sm font-semibold">員工卡（真係做嘢嗰班）</div>
+          <div className="mt-2 text-sm leading-relaxed text-zinc-700">
+            三位代表人物：一個講效率、一個睇位準、一個守安全。講嘢有啲地盤味，但做嘢係穩陣派。
+          </div>
+
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                name: '阿強師傅',
+                role: '焊接／修補',
+                line: '「你 call 我 OT？我或者可以 OT 做完……不過你最好畀清楚圖同尺寸，唔好搞到我 X 晒。」',
+              },
+              {
+                name: '阿玲師傅',
+                role: '度尺／安裝',
+                line: '「我唔肯定咁樣得唔得……因為根本就行唔 X 通。改一改個位，先至穩陣。」',
+              },
+              {
+                name: '大偉師傅',
+                role: '安全／監督',
+                line: '「唔該行開少少……地盤版就係：唔好阻 X 住呀！安全第一，唔係講笑。」',
+              },
+            ].map((p) => (
+              <div
+                key={p.name}
+                className="rounded-2xl border border-zinc-950/10 bg-white/60 p-5"
+              >
+                <div className="text-sm font-semibold">{p.name}</div>
+                <div className="mt-1 text-xs font-semibold text-zinc-600">{p.role}</div>
+                <div className="mt-3 text-sm leading-relaxed text-zinc-700">{p.line}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   )

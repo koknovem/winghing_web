@@ -14,10 +14,10 @@ function NavItem({ to, label }: { to: string; label: string }) {
       to={to}
       className={({ isActive }) =>
         [
-          'rounded-full px-3 py-2 text-sm font-medium transition',
+          'rounded-full px-3 py-2 text-sm font-medium text-white/85 transition hover:text-white',
           isActive
-            ? 'bg-zinc-950 text-white'
-            : 'text-zinc-700 hover:bg-white/60 hover:text-zinc-950',
+            ? 'bg-white/15 ring-1 ring-white/15'
+            : 'hover:bg-white/10',
         ].join(' ')
       }
       end={to === '/'}
@@ -31,7 +31,7 @@ export function Layout() {
   const telHref = `tel:${company.tel.replace(/\s+/g, '')}`
   return (
     <div className="min-h-screen text-zinc-900">
-      <header className="sticky top-0 z-50 border-b border-zinc-950/10 bg-[#111827]/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-black/20 bg-[#0b1220]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <div className="min-w-0">
             <div className="truncate text-base font-semibold text-white">
@@ -50,7 +50,7 @@ export function Layout() {
 
           <div className="flex items-center gap-2">
             {/* Desktop: compact info card on the right */}
-            <div className="hidden items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 text-xs text-white/85 md:flex">
+            <div className="hidden items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 text-xs text-white/90 shadow-sm shadow-black/20 md:flex">
               <a
                 className="inline-flex items-center gap-1.5 font-semibold text-white hover:underline"
                 href={company.whatsapp.waMeLink}

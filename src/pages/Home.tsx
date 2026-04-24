@@ -128,62 +128,49 @@ export function Home() {
         </details>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
-          <div className="text-sm font-semibold">地盤吹水角（認真又唔認真）</div>
-          <div className="mt-2 text-sm leading-relaxed text-zinc-700">
-            呢張卡係用嚟輕鬆下，唔係真係鬧人。地盤味句式就係咁：前後加兩三個「X」，節奏一到就有 feel。
-          </div>
-          <div className="mt-4 rounded-2xl border border-zinc-950/10 bg-white/60 p-5">
-            <div className="text-sm font-semibold">今日口頭禪</div>
+      <section className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <div className="text-sm font-semibold">員工卡（真係做嘢嗰班）</div>
             <div className="mt-2 text-sm leading-relaxed text-zinc-700">
-              「唔好阻 X 住呀，行開啲啦！快 X 啲啦！」<br />
-              「根本就行唔 X 通，痴 X 線！」<br />
-              「唔 X 係呀～～」
-            </div>
-            <div className="mt-3 text-xs text-zinc-500">
-              提示：呢度個「X」你自己心入面補字就得，網站唔會幫你打出嚟。
+              三位代表人物：一個講效率、一個睇位準、一個守安全。講嘢有啲地盤味，但做嘢係穩陣派。
             </div>
           </div>
+          <div className="text-xs text-zinc-500">（手機直排／電腦三欄）</div>
         </div>
 
-        <div className="rounded-2xl border border-zinc-950/10 bg-white/70 p-6 shadow-sm shadow-black/5">
-          <div className="text-sm font-semibold">員工卡（真係做嘢嗰班）</div>
-          <div className="mt-2 text-sm leading-relaxed text-zinc-700">
-            三位代表人物：一個講效率、一個睇位準、一個守安全。講嘢有啲地盤味，但做嘢係穩陣派。
-          </div>
-
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                name: '阿強師傅',
-                role: '焊接／修補',
-                line:
-                  '「我做焊接同修補，最撚憎就係啲人講兩句就想我即刻變魔術。你話趕？得，OT 我都可以頂硬上，但你要畀撚清楚圖、尺寸同現場位，唔好一撚陣又改、又話『其實我想另一款』，搞到我拆完又焊返，浪鳩費時間又危險。啲位唔撚work我會直講，唔撚係我串，係真係行唔撚通。做得地盤，粗口係標點符號，但我做嘢係認真：焊位要實、角度要正、收口要靚，唔撚係裝飾品咁簡單。你俾我一個準，我俾你一個穩陣。」',
-              },
-              {
-                name: '阿玲師傅',
-                role: '度尺／安裝',
-                line:
-                  '「我負責度尺同安裝，講撚白啲：冇撚度清楚，你後面一撚定出事。好閪多客一開始話『差唔多啦』，我心諗：差唔撚多你就等於差好撚柒多。門口斜少少、牆身唔直、地台高低位，全部都會影響件鐵器合唔合、開唔開到、會唔會刮手。有人鍾意呃鳩自己：『應該得㗎喇』——我會即刻回一句：唔撚係呀！真係唔撚係。你話我煩鳩？係，我煩鳩係因為想一次做撚啱，唔想返工返到變補鑊。安裝嗰陣我都會催：行撚開啲啦，唔撚好阻住，安全第一。做得穩陣，先至係型。」',
-              },
-              {
-                name: '大偉師傅',
-                role: '安全／監督',
-                line:
-                  '「我做安全同監督，唔係扮警察，我係幫大家返到屋企。地盤最驚就係『趕』：一趕就亂，一亂就出事。你哋想快？我都想快，但唔可以用命去換。有人企到焊火隔離、又伸手摸件嘢，我真係忍唔住會屌：唔好阻撚住！行鳩開啦！你以為好玩咩？我見過太多小意外變大鑊，唔想你哋中招。做工程唔係靠口水，係靠程序：拉線、固定、承重、驗收，一樣都唔可以偷雞。你俾我守好安全位，我俾你成單嘢順順利利交收，唔使返轉頭補救，大家都開心。」',
-              },
-            ].map((p) => (
-              <div
-                key={p.name}
-                className="rounded-2xl border border-zinc-950/10 bg-white/60 p-5"
-              >
+        <div className="mt-5 grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              name: '李師傅',
+              role: '焊接／修補',
+              line:
+                '「我做焊接同修補，最撚憎就係啲人講兩句就想我即刻變魔術。你話趕？得，OT 我都可以頂硬上，但你要畀撚清楚圖、尺寸同現場位，唔好一撚陣又改、又話『其實我想另一款』，搞到我拆完又焊返，浪鳩費時間又危險。啲位唔撚work我會直講，唔撚係我串，係真係行唔撚通。做得地盤，粗口係標點符號，但我做嘢係認真：焊位要實、角度要正、收口要靚，唔撚係裝飾品咁簡單。你俾我一個準，我俾你一個穩陣。」',
+            },
+            {
+              name: '老師傅',
+              role: '度尺／安裝',
+              line:
+                '「我負責度尺同安裝，講撚白啲：冇撚度清楚，你後面一撚定出事。好閪多客一開始話『差唔多啦』，我心諗：差唔撚多你就等於差好撚柒多。門口斜少少、牆身唔直、地台高低位，全部都會影響件鐵器合唔合、開唔開到、會唔會刮手。有人鍾意呃鳩自己：『應該得㗎喇』——我會即刻回一句：唔撚係呀！真係唔撚係。你話我煩鳩？係，我煩鳩係因為想一次做撚啱，唔想返工返到變補鑊。安裝嗰陣我都會催：行撚開啲啦，唔撚好阻住，安全第一。做得穩陣，先至係型。」',
+            },
+            {
+              name: '母師傅',
+              role: '安全／監督',
+              line:
+                '「我做安全同監督，唔係扮警察，我係幫大家返到屋企。地盤最驚就係『趕』：一趕就亂，一亂就出事。你哋想快？我都想快，但唔可以用命去換。有人企到焊火隔離、又伸手摸件嘢，我真係忍唔住會屌：唔好阻撚住！行鳩開啦！你以為好玩咩？我見過太多小意外變大鑊，唔想你哋中招。做工程唔係靠口水，係靠程序：拉線、固定、承重、驗收，一樣都唔可以偷雞。你俾我守好安全位，我俾你成單嘢順順利利交收，唔使返轉頭補救，大家都開心。」',
+            },
+          ].map((p) => (
+            <div
+              key={p.name}
+              className="rounded-2xl border border-zinc-950/10 bg-white/60 p-6"
+            >
+              <div className="flex items-baseline justify-between gap-3">
                 <div className="text-sm font-semibold">{p.name}</div>
-                <div className="mt-1 text-xs font-semibold text-zinc-600">{p.role}</div>
-                <div className="mt-3 text-sm leading-relaxed text-zinc-700">{p.line}</div>
+                <div className="text-xs font-semibold text-zinc-600">{p.role}</div>
               </div>
-            ))}
-          </div>
+              <div className="mt-4 text-sm leading-relaxed text-zinc-700">{p.line}</div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

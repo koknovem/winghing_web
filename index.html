@@ -20,5 +20,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="text/javascript" src="https://erp.w-h.com.hk/im_livechat/loader/1"></script>
+    <script type="text/javascript">
+      (function () {
+        try {
+          const info = window.odoo && window.odoo.__session_info__;
+          const livechat = info && info.livechatData;
+          if (livechat && typeof livechat.serverUrl === "string") {
+            // Odoo livechat loader may return a private LAN base URL; force public HTTPS base.
+            livechat.serverUrl = "https://erp.w-h.com.hk";
+          }
+        } catch {
+          // ignore
+        }
+      })();
+    </script>
+    <script type="text/javascript" src="https://erp.w-h.com.hk/im_livechat/assets_embed.js"></script>
   </body>
 </html>

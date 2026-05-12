@@ -4,8 +4,7 @@ import { company } from '../content/company'
 const navItems = [
   { to: '/', label: '首頁' },
   { to: '/projects', label: '工程相片' },
-  { to: '/about', label: '關於我們' },
-  { to: '/contact', label: '聯絡我們' },
+  { to: '/doors', label: '不鏽鋼門' },
 ]
 
 function NavItem({ to, label }: { to: string; label: string }) {
